@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+<header class="bg-dark text-white">
+    <nav class="text-center">
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <MyNav />
+        </div>
+        <div class="col-sm-9">
+            @Body
+        </div>
+    </div>
+</div>
+
+<footer class="bg-success">
+    All Rights Reserved
+</footer>

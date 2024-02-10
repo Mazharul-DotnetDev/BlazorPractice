@@ -1,0 +1,49 @@
+﻿<style>
+    .active {
+        color: red;
+    }
+</style>
+
+<div class="p-3 mb-2 bg-warning text-dark">
+    <h3 class="bg-info text-white">Links</h3>
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink href="/" Match="NavLinkMatch.All">
+                Index
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/City">
+                City
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/Country">
+                Country
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/Continent">
+                Continent
+            </NavLink>
+        </li>
+    </ul>
+
+    <button class="btn btn-primary" @onclick="NavigateUser">Country</button>
+</div>
+
+@code {
+
+//     [Inject]:
+
+// This attribute above the public NavigationManager NM { get; set; }
+//     line indicates that the NavigationManager service should be injected into the current component at runtime.
+// The NavigationManager service provides functionalities for navigation within your Blazor app.
+
+
+    [Inject]
+    public NavigationManager NM { get; set; }
+
+    public void NavigateUser() => NM.NavigateTo("/Country");
+
+}

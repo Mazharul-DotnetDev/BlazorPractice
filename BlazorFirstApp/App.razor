@@ -1,0 +1,20 @@
+﻿<!-- This code sets up routing in a Blazor application -->
+<Router AppAssembly="@typeof(App).Assembly">
+    <!-- If a route is found, display the content -->
+    <Found Context="routeData">
+        <!-- Display the component corresponding to the route -->
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <!-- Focus on the first h1 element after navigating to a new route -->
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <!-- If no route is found, display a not found message -->
+    <NotFound>
+        <!-- Display a title indicating the page is not found -->
+        <PageTitle>Not found</PageTitle>
+        <!-- Use MainLayout as the layout for the not found page -->
+        <LayoutView Layout="@typeof(MainLayout)">
+            <!-- Display an apology message -->
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
